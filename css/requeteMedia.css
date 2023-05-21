@@ -1,0 +1,97 @@
+/*///////////////////////////////////////////////////////////////////////
+Requete medias pour tablettes
+///////////////////////////////////////////////////////////////////////*/
+@media screen and (min-width:768px){
+
+/* style pour le Main du debut */
+
+/*     Taille de toutes les images du debut */
+    main.debut > section > img{
+        width: 24vw;
+    }
+
+/*     Margin pour centrer le contenu et les textes du debut */
+    main.debut > div:nth-of-type(1){
+        margin-top: 50%;
+    }
+
+/*     Distribution pour les reponses  */
+    .reponses{
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        align-content: center;
+    }
+
+/*     Espace utilise pour chaque reponses */
+    .reponse{
+        padding-top: 85px;
+        margin: 1%;
+    }
+
+/*     Taille utilise pour chaque image de chaque reponses */
+    div.imageReponse{
+        height: 20vh;
+        width: 35vw;
+    }
+
+    /*     Position du after du bouton pour changer le theme de tout la page */
+    label::after{
+        top: 5px;
+    }
+
+/*     Margin pour centrer le contenu et les textes du fin */
+    .text-fin{
+        margin-top: 30%;
+    }
+
+}
+
+/*///////////////////////////////////////////////////////////////////////
+Requete medias pour ordinateurs
+///////////////////////////////////////////////////////////////////////*/
+@media screen and (min-width:1024px){
+
+/*     Curseur personalisé pour les ordinateurs */
+    body{
+        cursor: url(../medias/photos/curseur.png) 32 32, pointer;
+    }
+
+    /*     Taille de toutes les images du debut */
+    main.debut > section > img{
+        width: 10vw;
+    }
+
+/*     Margin pour centrer le contenu et les textes du debut */
+    main.debut > div:nth-of-type(1){
+        margin-top: 15%;
+    }
+
+    /*     Espace utilise pour chaque reponses et lorsqu'on survol une reponse on change le curseur */
+    .reponse{
+        padding-top: 0;
+        margin: 0;
+        cursor: url(../medias/photos/curseur-reponse.png) 32 32, pointer;
+    }
+    
+/*     Taille utilise pour chaque image de chaque reponses */
+    div.imageReponse{
+        height: 35vh;
+        width: 20vw;
+    }
+
+/* On change la position du bouton pour changer le theme de la page */
+    label{
+        margin-top: 25%;
+    }
+
+    /*     Position du after du bouton pour changer le theme de tout la page */
+    label::after{
+        top: 6px;
+    }
+
+/*     Margin pour centrer le contenu et les textes du fin */
+    .text-fin{
+        margin-top: 15%;
+    }
+}

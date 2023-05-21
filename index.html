@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<title>TP2 Web</title>
+
+	<meta charset="UTF-8">
+<!-- 	Meta pour le requete media -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<!-- 	Toutes les styles sheets CSS -->
+    <link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+	<link rel="stylesheet" href="css/requeteMedia.css">
+</head>
+<body>
+<!-- 	Main du debut -->
+	<main class="debut">
+<!-- 		Toutes les textes du debut -->
+		<div class="titre-anime"></div>
+		<div class="commencer-quiz"></div>
+		<div class="meilleur-score"></div>
+		<div class="temps-joue"></div>
+<!-- 		Toutes les images du debut -->
+		<section class="imagesDebut">		
+			<img class="logoEsports" src="medias/photos/CSGO.png" alt="csgo">
+			<img class="logoEsports" src="medias/photos/WORLDS.png" alt="LoL">
+			<img class="logoEsports" src="medias/photos/VCT.png" alt="Valorant">
+			<img class="logoEsports" src="medias/photos/R6.png" alt="R6">
+		</section>
+	</main>
+<!-- 	Main du quiz principal -->
+	<main class="quiz">
+<!-- 		Cercle de progres -->
+		<div class="progres">
+			<div class="cercle">				
+				<div class="numero"></div>
+			</div>
+		</div>
+<!-- 		Titre du quiz -->
+		<header>
+			Quiz Esports
+		</header>
+<!-- 		Section pour toutes les questions -->
+		<section class="questions">
+			<div class="titre-reponses"></div>
+			<div class="reponses"></div>
+		</section>
+<!-- 		Bouton pour changer le theme du body -->
+		<div class="changer-couleurs">
+			<input type="checkbox" id="cc-changer-couleur">
+			<label for="cc-changer-couleur" class="bouton-fonce"></label>
+		</div>
+	</main>
+<!-- 	Main de la fin du quiz -->
+	<main class="pointage">
+		<div class="text-fin"></div>
+		<div class="meilleur-score-2"></div>
+		<div class="temps-joue-2"></div>
+		<div class="instructions-fin">Cliquez sur l'écran pour recommencer!</div>
+	</main>
+</body>
+<!-- Toutes les scripts de la page -->
+<script src="js/questionsQuiz.js"></script>
+<script src="js/index.js"></script>
+</html>

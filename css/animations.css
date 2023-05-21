@@ -1,0 +1,323 @@
+/*///////////////////////////////////////////////////////////////////////
+LES ANIMATIONS
+///////////////////////////////////////////////////////////////////////*/
+
+/* Animations pour montrer les images au debut */
+/* Les montrer par la droite */
+@keyframes montrer-images-1{
+  from{
+    transform: translateX(100%);
+  }
+  
+  to{
+    transform: translateX(0%);
+    opacity: 1;
+    
+  }
+  
+  
+}
+
+/* Les montrer par la gauche */
+@keyframes montrer-images-2{
+    from{
+        transform: translateX(-100%);
+    }
+
+    to{
+        transform: translateX(0%);
+        opacity: 1;
+
+    }
+
+
+}
+
+/* Apres l'apparition on fait disparaitre toutes les images */
+@keyframes disparaitre-image {
+    from{
+        transform: translateY(0%);
+        opacity: 1;
+    }
+
+    to{
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    
+}
+
+/* On met les animations sur chacun des images */
+main.debut > section > img:nth-of-type(1){
+    animation: montrer-images-1 2s forwards, disparaitre-image 1s 3.5s forwards;
+}
+
+main.debut > section > img:nth-of-type(2){
+    animation: montrer-images-2 2s  0.5s forwards, disparaitre-image 1s 3.5s forwards;
+}
+
+main.debut > section > img:nth-of-type(3){
+    animation: montrer-images-1 2s 1s forwards, disparaitre-image 1s 3.5s forwards;
+}
+
+main.debut > section > img:nth-of-type(4){
+    animation: montrer-images-2 2s 1.5s forwards, disparaitre-image 1s 3.5s forwards;
+}
+
+/* Apres les animations des images on montre le titre du quiz */
+@keyframes  revelation-titre{
+    
+    from{
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0%);
+    }
+
+}
+
+/* Code adapte de: https://techblog.geekyants.com/some-of-the-most-popular-css-text-animations */
+/* Animation pour montrer le titre et mettre un style neon */
+@keyframes couleurs-titre {
+    
+  0%,
+  100% {
+      text-shadow: 0 0 10px var(--couleur3), 0 0 20px var(--couleur3), 0 0 20px var(--couleur3), 0 0 20px var(--couleur3), 0 0 2px #fed128, 2px 2px 2px #806914;
+      color: #f5efcb;
+  }
+  50% {
+      text-shadow: 0 0 2px #800e0b, 0 0 5px #800e0b, 0 0 5px #800e0b, 0 0 5px #800e0b, 0 0 2px #800e0b, 4px 4px 2px #40340a;
+      color: var(--couleur6);
+  }
+}
+
+/* On met les animations dans le titre anime */
+.titre-anime{
+    animation: revelation-titre 1s 1s forwards, couleurs-titre 3s infinite;
+}
+
+/* Code adapte de: https://techblog.geekyants.com/some-of-the-most-popular-css-text-animations */
+/* Animation pour montrer le deuxieme titre dans le debut du Quiz */
+@keyframes revelation-titre-2 {
+    0% {
+        transform: translateY(200px) scale(1);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    65% {
+        transform: translateY(17px);
+        opacity: 1;
+    }
+    75% {
+        transform: translateY(22px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+/* Tout les titres qu'utilisent l'animation de revelation */
+.commencer-quiz{
+    animation: revelation-titre-2 1s 2s forwards;
+  }
+  
+.meilleur-score{
+  animation: revelation-titre-2 1s 3s forwards;
+}
+
+.temps-joue{
+  animation: revelation-titre-2 1s 3.5s forwards;
+}
+
+.temps-joue-2{
+  animation: revelation-titre-2 1s 1s forwards;
+}
+
+/* Code addapte de: https://animista.net/play/entrances/slide-in-blurred/slide-in-blurred-left */
+/* Animation pour montrer le bouton pour commencer le quiz */
+@keyframes montrer-bouton {
+    0%{
+        transform: translateX(-1000px) scaleX(2.5) scaleY(0.2);
+        transform-origin: 100% 50%;
+        filter: blur(40px);
+    }
+
+    100%{
+        transform: translateX(0) scaleY(1) scaleX(1);
+        transform-origin: 50% 50%;
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+/* On met l'animation sur le bouton */
+.bouton{
+    animation: montrer-bouton 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+}
+
+/* code addapte de: https://animista.net/play/attention/jello/jello-horizontal */
+/* Animation pour tout les bonnes reponses du Quiz  */
+@keyframes bon-choix{
+    0% {
+        transform: scale3d(1, 1, 1);
+      }
+      30% {
+        transform: scale3d(1.25, 0.75, 1);
+      }
+      40% {
+        transform: scale3d(0.75, 1.25, 1);
+      }
+      50% {
+        transform: scale3d(1.15, 0.85, 1);
+      }
+      65% {
+        transform: scale3d(0.95, 1.05, 1);
+      }
+      75% {
+        transform: scale3d(1.05, 0.95, 1);
+      }
+      100% {
+        transform: scale3d(1, 1, 1);
+        color: rgb(49, 177, 49);
+      }
+}
+
+/* On met l'animation sur tout les reponses avec la classe bonne reponse */
+div.reponse.bonne-reponse{
+    animation: bon-choix 1s forwards;
+}
+
+/* code addapte de: https://animista.net/play/attention/shake/shake-horizontal */
+/* Animation pour tout les mauvais reponses du Quiz  */
+@keyframes mauvais-choix{
+    0%,
+    100% {
+      transform: translateX(0);
+      color: #800e0b;
+    }
+    10%,
+    30%,
+    50%,
+    70% {
+      transform: translateX(-10px);
+    }
+    20%,
+    40%,
+    60% {
+      transform: translateX(10px);
+    }
+    80% {
+      transform: translateX(8px);
+    }
+    90% {
+      transform: translateX(-8px);
+    }
+}
+
+/* On met l'animation sur tout les reponses avec la classe mauvais reponse */
+div.reponse.mauvais-reponse{
+    animation: mauvais-choix 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+
+/* Code adapte de:https://animista.net/play/entrances/slide-in-bck/slide-in-bck-bottom */
+/* Animation pour mettre les points dans le fin du Quiz */
+@keyframes apparaitre-points {
+    0% {
+        transform: translateY(1000px) scaleY(2.5) scaleX(0.2);
+        transform-origin: 50% 100%;
+        filter: blur(40px);
+        opacity: 0;
+    }
+
+      100% {
+        transform: translateY(0) scaleY(1) scaleX(1);
+        transform-origin: 50% 50%;
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+/* Section qui montre le resultat du Quiz */
+section.resultat{
+    animation: apparaitre-points 0.6s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+}
+
+/* Code adapte de: https://animista.net/play/entrances/bounce-in/bounce-in-top */
+/* Animation pour les derniers textes dans la fin du Quiz */
+@keyframes apparaitre-btn {
+    0% {
+      transform: translateY(-500px);
+      animation-timing-function: ease-in;
+      opacity: 0;
+    }
+    38% {
+      transform: translateY(0);
+      animation-timing-function: ease-out;
+      opacity: 1;
+    }
+    55% {
+      transform: translateY(-65px);
+      animation-timing-function: ease-in;
+    }
+    72% {
+      transform: translateY(0);
+      animation-timing-function: ease-out;
+    }
+    81% {
+      transform: translateY(-28px);
+      animation-timing-function: ease-in;
+    }
+    90% {
+      transform: translateY(0);
+      animation-timing-function: ease-out;
+    }
+    95% {
+      transform: translateY(-8px);
+      animation-timing-function: ease-in;
+    }
+    100% {
+      transform: translateY(0);
+      animation-timing-function: ease-out;
+    }
+}
+
+/* Textes qui utilisent l'animation du dernier texte */
+.text-fin{
+    animation: apparaitre-btn 1.1s 1s both;
+}
+
+/* Code adapte de: https://animista.net/play/text/tracking-in/tracking-in-expand-fwd */
+/* Animation qui montre les instructions pour recommencer le Quiz */
+@keyframes dernier-texte {
+  0% {
+    letter-spacing: -0.5em;
+    transform: translateZ(-700px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+
+
+/* Text qui montre les instructions pour recommencer */
+.instructions-fin {
+    animation: dernier-texte 0.8s 3s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+.meilleur-score-2{
+    animation: dernier-texte 0.8s 2s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
